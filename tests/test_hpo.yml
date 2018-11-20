@@ -1,50 +1,57 @@
 # basic stuff
 data: 
   name: hpo
-  ontology-version: releases/2018-10-09
-  annotation-version: ??
+  ontologyVersion: releases/2018-10-09
+  annotationVersion: ??
+
 # all tests go here
 tests:
-  # information content tests
-  ic-tests:
-    - ictest:
-      class: HP:0000118
-      ic: 0
-    - ictest:
-      class: HP:0000123
-      ic: 2.3
-  # tests for pairwise comparisons between two ontology classes
-  class-sim-tests:
-    - classsimtest: MICA
-      class1: HP:0000118
-      class2: HP:0001234
-      sim: 2.3
-    - classsimtest: Cosine
-      class1: HP:0000118
-      class2: HP:0001234
-      sim: 2.3
-    - classsimtest: Jaccard
-      class1: HP:0000118
-      class2: HP:0001234
-      sim: 2.3
+  
+# information content tests
+  - 
+    classId: HP:0000118
+    ic: 0
+    testtype: ictest
+  - 
+    classId: HP:0000123
+    ic: 2.3 
+    testtype: ictest
+# tests for pairwise comparisons between two ontology classes
+  - 
+    name: MICA
+    class1: HP:0000118
+    class2: HP:0001234
+    sim: 2.3
+    testtype: classsimtest
+  - 
+    name: Cosine
+    class1: HP:0000118
+    class2: HP:0001234
+    sim: 2.3
+    testtype: classsimtest
+  - 
+    name: Jaccard
+    class1: HP:0000118
+    class2: HP:0001234
+    sim: 2.3
+    testtype: classsimtest
+
   # test for similarity calculations between two items (mostly sets of ontology classes)
-  item-sim-tests:
-    - itemsimtest: Resnik-BMA
-      item1: HP:0000118,HP:0001232,HP:1223332
-      item2: HP:0001232,HP:1223332
-      sim: 2.3
-    - itemsimtest: PhenoDigm
-      item1: OMIM:123412
-      item2: ORPHA:12344
-      sim: 30
-    - itemsimtest: Jaccard
-      item1: HP:0000118
-      item2: OMIM:123412
-      sim: 0.12
-    - itemsimtest: Bernoulli-Grid
-      item1: HP:0000118,HP:0001221
-      item2: OMIM:12345
-      sim: 0.812
-
-
-      
+  - 
+    name: Resnik-BMA
+    item1: HP:0000118,HP:0001232,HP:1223332
+    item2: HP:0001232,HP:1223332
+    sim: 2.3
+    testtype: itemsimtest
+  - 
+    name: PhenoDigm
+    item1: HP:0000118,HP:0001232,HP:1223332
+    item2: HP:0001232,HP:1223332
+    sim: 2.3
+    testtype: itemsimtest
+  - 
+    name:  Bernoulli-Grid
+    item1: HP:0000118,HP:0001232,HP:1223332
+    item2: HP:0001232,HP:1223332
+    sim: 2.3
+    testtype: itemsimtest
