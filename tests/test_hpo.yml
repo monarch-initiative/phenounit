@@ -1,0 +1,57 @@
+# basic stuff
+data: 
+  name: hpo
+  ontology-version: releases/2018-10-09
+  annotation-version: ??
+# all tests go here
+tests:
+  # information content tests
+  ic-tests:
+    ictest:
+      class: HP:0000118
+      ic: 0
+    ictest:
+      class: HP:0000123
+      ic: 2.3
+  # tests for pairwise comparisons between two ontology classes
+  class-sim-tests:
+    classsimtest:
+      algorithm: MICA
+      class1: HP:0000118
+      class2: HP:0001234
+      sim: 2.3
+    classsimtest:
+      algorithm: Cosine
+      class1: HP:0000118
+      class2: HP:0001234
+      sim: 2.3
+    classsimtest:
+      algorithm: Jaccard
+      class1: HP:0000118
+      class2: HP:0001234
+      sim: 2.3
+  # test for similarity calculations between two items (mostly sets of ontology classes)
+  item-sim-tests:
+    itemsimtest:
+      algorithm: Resnik-BMA
+      item1: HP:0000118,HP:0001232,HP:1223332
+      item2: HP:0001232,HP:1223332
+      sim: 2.3
+    itemsimtest:
+      algorithm: PhenoDigm
+      item1: OMIM:123412
+      item2: ORPHA:12344
+      sim: 30
+    itemsimtest:
+      algorithm: Jaccard
+      item1: HP:0000118
+      item2: OMIM:123412
+      sim: 0.12
+    itemsimtest:
+      algorithm: Bernoulli-Grid
+      item1: HP:0000118,HP:0001221
+      item2: OMIM:12345
+      sim: 0.812
+
+
+      
