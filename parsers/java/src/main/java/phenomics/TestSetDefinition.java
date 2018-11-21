@@ -3,6 +3,8 @@
  */
 package phenomics;
 
+import java.util.Arrays;
+
 import phenomics.tests.ClassSimTest;
 import phenomics.tests.IcTest;
 import phenomics.tests.ItemSimTest;
@@ -75,6 +77,26 @@ public class TestSetDefinition {
 	 */
 	public void setData(Data data) {
 		this.data = data;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("TestSetDefinition [data=");
+		builder.append(data);
+		builder.append(",\n icTests=");
+		builder.append(Arrays.toString(icTests));
+		builder.append(",\n classsimTests=");
+		builder.append(Arrays.toString(classsimTests));
+		builder.append(",\n itemsimTests=");
+		builder.append(Arrays.toString(itemsimTests));
+		builder.append("]");
+		return builder.toString();
 	}
 
 }

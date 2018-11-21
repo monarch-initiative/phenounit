@@ -9,7 +9,7 @@ package phenomics.tests;
  */
 public class IcTest {
 	private String classId;
-	private String ic;
+	private double ic;
 
 	/**
 	 * @return the classId
@@ -29,7 +29,7 @@ public class IcTest {
 	/**
 	 * @return the ic
 	 */
-	public String getIc() {
+	public double getIc() {
 		return ic;
 	}
 
@@ -37,7 +37,7 @@ public class IcTest {
 	 * @param ic
 	 *            the ic to set
 	 */
-	public void setIc(String ic) {
+	public void setIc(double ic) {
 		this.ic = ic;
 	}
 
